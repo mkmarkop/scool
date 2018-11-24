@@ -2,6 +2,7 @@ package com.hackakthon.education.scool;
 
 import com.hackakthon.education.scool.model.entity.Student;
 import com.hackakthon.education.scool.model.repository.StudentRepository;
+import com.hackakthon.education.scool.model.service.StudentService;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,19 +18,18 @@ public class ScoolApplication {
 	}
 
 	@Bean
-    ApplicationRunner init(StudentRepository repository) {
+    ApplicationRunner init(StudentService repository) {
 	    return args -> {
             Stream.of(
-                    "Daniel",
+
                     "Oscar",
                     "Paola",
                     "Marko"
             ).forEach(name -> {
-                Student student = new Student();
-                student.setFirstName(name);
-                repository.save(student);
+                Student s = Student.builder().firstName(name).build();
+                repository.saveStudent(s);
             });
-            repository.findAll().forEach(System.out::println);
+            repository.getAllStudents().forEach(System.out::println);
         };
     }
 }

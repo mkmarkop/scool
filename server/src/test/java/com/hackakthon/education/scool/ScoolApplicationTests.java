@@ -11,6 +11,7 @@ public class ScoolApplicationTests {
 
 	@Test
 	public void contextLoads() {
+
 	}
 
 }
