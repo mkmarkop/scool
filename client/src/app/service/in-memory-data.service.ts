@@ -14,13 +14,15 @@ export class InMemoryDataService implements InMemoryDbService {
     const projects: Project[] = [
       {
         id: 1,
-        tag: 'Renaissance in Italy',
+        tag: 'Renaissance',
+        title: 'Renaissance in Italy',
         description: 'abc',
         chapters: [{
           id: 1,
           title: 'Works of Leonardo da Vinci',
           readings: [{
             id: 1,
+            title: 'Introduction',
             text: 'Despite the recent awareness and admiration of Leonardo as a scientist and inventor,' +
               'for the better part of four hundred years his fame rested on his achievements as a painter.' +
               'A handful of works that are either authenticated or attributed to him have been regarded as' +

@@ -7,16 +7,16 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material';
 import {StudentService} from './service/student.service';
 import {HttpClientModule} from '@angular/common/http';
-import { StudentListComponent } from './component/student-list/student-list.component';
-import {HttpInMemoryWebApiModule} from 'angular-in-memory-web-api';
+import {HttpClientInMemoryWebApiModule, HttpInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {InMemoryDataService} from './service/in-memory-data.service';
 import { ProjectListComponent } from './component/project-list/project-list.component';
+import { ProjectComponent } from './component/project/project.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StudentListComponent,
-    ProjectListComponent
+    ProjectListComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,
@@ -24,11 +24,11 @@ import { ProjectListComponent } from './component/project-list/project-list.comp
     BrowserAnimationsModule,
     MatButtonModule,
     HttpClientModule,
-    HttpInMemoryWebApiModule.forRoot(
+    HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false}
     )
   ],
-  providers: [StudentService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
