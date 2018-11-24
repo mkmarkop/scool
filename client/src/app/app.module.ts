@@ -8,6 +8,8 @@ import {MatButtonModule} from '@angular/material';
 import {StudentService} from './service/student.service';
 import {HttpClientModule} from '@angular/common/http';
 import { StudentListComponent } from './component/student-list/student-list.component';
+import {HttpInMemoryWebApiModule} from 'angular-in-memory-web-api';
+import {InMemoryDataService} from './service/in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,10 @@ import { StudentListComponent } from './component/student-list/student-list.comp
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    HttpInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false}
+    )
   ],
   providers: [StudentService],
   bootstrap: [AppComponent]
