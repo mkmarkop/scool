@@ -10,11 +10,13 @@ import {HttpClientModule} from '@angular/common/http';
 import { StudentListComponent } from './component/student-list/student-list.component';
 import {HttpInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {InMemoryDataService} from './service/in-memory-data.service';
+import { ProjectListComponent } from './component/project-list/project-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StudentListComponent
+    StudentListComponent,
+    ProjectListComponent
   ],
   imports: [
     BrowserModule,
