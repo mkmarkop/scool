@@ -22,6 +22,8 @@ public class Chapter {
     @GeneratedValue
     private Long id;
 
+    private String title;
+
     @ElementCollection(targetClass=String.class)
     private List<String> reading;
 

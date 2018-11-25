@@ -23,11 +23,20 @@ public class Project {
     @GeneratedValue
     private Long id;
 
+    private String title;
+    private String tag;
+    private String description;
+
     @OneToMany(
             mappedBy = "project",
             orphanRemoval = true
     )
     private List<Chapter> chapters = new ArrayList<>();
+
+
+    @ManyToOne
+    @JoinColumn(name = "teacher_id")
+    private Teacher teacher;
 
 
 }

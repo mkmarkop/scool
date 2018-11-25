@@ -59,4 +59,13 @@ public class ProjectServiceImpl {
         projectRepository.deleteById(id);
 
     }
+
+    @Transactional
+    public void deleteChapter(Long idProject, Chapter chapter) {
+        Project p = projectRepository.getOne(idProject);
+        p.getChapters().remove(chapter);
+        projectRepository.save(p);
+
+
+    }
 }
