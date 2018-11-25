@@ -13,7 +13,6 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 @EqualsAndHashCode
 public class Task {
 
@@ -24,7 +23,7 @@ public class Task {
     @NonNull
     private String title;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "game_id")
     private Game game;
 
@@ -39,5 +38,15 @@ public class Task {
     private String rightAnswer;
 
 
-
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", game=" + game.getId() +
+                ", possibleAnswers=" + possibleAnswers +
+                ", image='" + image + '\'' +
+                ", rightAnswer='" + rightAnswer + '\'' +
+                '}';
+    }
 }

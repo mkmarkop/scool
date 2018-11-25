@@ -14,7 +14,7 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
+//@ToString
 @EqualsAndHashCode
 public class Chapter {
 
@@ -36,6 +36,13 @@ public class Chapter {
     @JoinColumn(name = "project_id")
     private Project project;
 
-
-
+    @Override
+    public String toString() {
+        return "Chapter{" +
+                "id=" + id +
+                ", reading=" + reading +
+                ", games=" + games +
+                ", project=" + project.getId() +
+                '}';
+    }
 }

@@ -12,7 +12,7 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString @EqualsAndHashCode
+@EqualsAndHashCode
 public class Game {
 
     @Id
@@ -31,8 +31,12 @@ public class Game {
     @JoinColumn(name = "chapter_id")
     private Chapter chapter;
 
-
-
-
-
+    @Override
+    public String toString() {
+        return "Game{" +
+                "id=" + id +
+                ", tasks=" + tasks +
+                ", chapter=" + chapter.getId() +
+                '}';
+    }
 }
