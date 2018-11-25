@@ -1,0 +1,8 @@
+<h1>{{chapter.title}}</h1>
+<mat-list role="list" *ngIf="chapter.games">
+  <mat-list-item *ngFor="let game of chapter.games">Assignment {{game.id}}</mat-list-item>
+</mat-list>
+
+<mat-list role="list" *ngIf="chapter.reads" >
+  <mat-list-item *ngFor="let read of chapter.reads">{{read.title}}</mat-list-item>
+</mat-list>

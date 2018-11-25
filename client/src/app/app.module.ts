@@ -11,8 +11,9 @@ import {
   MatIcon,
   MatIconModule,
   MatListModule,
-  MatToolbarModule
+  MatToolbarModule,
 } from '@angular/material';
+import {MatExpansionModule} from '@angular/material/expansion';
 import {StudentService} from './service/student.service';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
@@ -23,6 +24,11 @@ import { ChapterInfoComponent } from './component/project/chapter-info/chapter-i
 import { ReadingComponent } from './component/project/reading/reading.component';
 import { GameComponent } from './component/project/game/game.component';
 import { ChapterHeaderComponent } from './component/project/chapter-header/chapter-header.component';
+import { TeacherComponent } from './component/teacher/teacher.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import {MatCardModule} from '@angular/material/card';
+import { ChapterEditionComponent } from './component/chapter-edition/chapter-edition.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +38,10 @@ import { ChapterHeaderComponent } from './component/project/chapter-header/chapt
     ChapterInfoComponent,
     ReadingComponent,
     GameComponent,
-    ChapterHeaderComponent
+    ChapterHeaderComponent,
+    ProjectComponent,
+    TeacherComponent,
+    ChapterEditionComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +58,11 @@ import { ChapterHeaderComponent } from './component/project/chapter-header/chapt
     MatBadgeModule,
     MatDividerModule,
     MatExpansionModule,
-    MatChipsModule
+    MatChipsModule,
+    MatDividerModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
