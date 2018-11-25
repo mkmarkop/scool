@@ -27,15 +27,12 @@ public class Task {
     @JoinColumn(name = "game_id")
     private Game game;
 
-    @ElementCollection(targetClass=String.class)
-    private List<String> possibleAnswers = new ArrayList<>();
-
     //for now lets say that the image is a url
     @NonNull
     private String image;
 
     @NonNull
-    private String rightAnswer;
+    private String answer;
 
 
     @Override
@@ -44,9 +41,8 @@ public class Task {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", game=" + game.getId() +
-                ", possibleAnswers=" + possibleAnswers +
                 ", image='" + image + '\'' +
-                ", rightAnswer='" + rightAnswer + '\'' +
+                ", answer='" + answer + '\'' +
                 '}';
     }
 }

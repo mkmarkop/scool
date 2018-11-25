@@ -1,0 +1,6 @@
+<div class="question" *ngIf="question">
+  <h3>{{question}}</h3>
+  <img src="{{imageUrl}}" />
+  <input matLine [(ngModel)]="userAnswer" placeholder="answer">
+  <button (click)="onSubmit()" matLine mat-raised-button color="primary">Submit</button>
+</div>

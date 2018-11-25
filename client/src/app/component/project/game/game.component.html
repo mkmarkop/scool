@@ -1,3 +1,19 @@
-<p>
-  game works!
-</p>
+<div class="game-container" *ngIf="game">
+  <span class="mat-headline">{{game.title}}</span>
+  <div *ngIf="!finished">
+    <app-question #taskQuestion (submitAnswer)="onAnswerSubmit($event)"
+                  [question]="task.question" [imageUrl]="task.imageUrl"></app-question>
+  </div>
+  <div *ngIf="finished">
+    <h3 class="mat-subheading-1">Results</h3>
+    <mat-progress-bar mode="determinate" color="primary" value="{{percentage * 100}}"></mat-progress-bar>
+    <div>
+      <span class="mat-subheading-2">Correct</span>&nbsp;
+      <span>{{percentage * 100}}%</span>
+    </div>
+    <div>
+      <button mat-raised-button color="accent" (click)="reset()">Retry</button>&nbsp;
+      <button mat-raised-button color="primary" routerLink="/project/1">Continue</button>
+    </div>
+  </div>
+</div>

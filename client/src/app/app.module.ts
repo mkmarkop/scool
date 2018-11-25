@@ -10,11 +10,9 @@ import {
   MatDividerModule, MatExpansionModule,
   MatIcon,
   MatIconModule,
-  MatListModule,
+  MatListModule, MatProgressBarModule,
   MatToolbarModule,
 } from '@angular/material';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {StudentService} from './service/student.service';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {InMemoryDataService} from './service/in-memory-data.service';
@@ -29,6 +27,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card';
 import { ChapterEditionComponent } from './component/chapter-edition/chapter-edition.component';
+import { QuestionComponent } from './component/question/question.component';
+import { FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -41,7 +41,8 @@ import { ChapterEditionComponent } from './component/chapter-edition/chapter-edi
     ChapterHeaderComponent,
     ProjectComponent,
     TeacherComponent,
-    ChapterEditionComponent
+    ChapterEditionComponent,
+    QuestionComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +63,9 @@ import { ChapterEditionComponent } from './component/chapter-edition/chapter-edi
     MatDividerModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatCardModule
+    MatCardModule,
+    MatProgressBarModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -21,33 +21,6 @@ public class ScoolApplication {
 		SpringApplication.run(ScoolApplication.class, args);
 	}
 
-//	@Bean
-//    ApplicationRunner init(StudentService repository) {
-//	    return args -> {
-//            Stream.of(
-//
-//                    "Oscar",
-//                    "Paola",
-//                    "Marko"
-//            ).forEach(name -> {
-//                Student s = Student.builder().firstName(name).build();
-//                repository.saveStudent(s);
-//            });
-//            repository.getAllStudents().forEach(System.out::println);
-//        };
-//    }
-//    @Bean
-//    ApplicationRunner init(TaskRepository repository) {
-//        return args -> {
-//            Task t = Task.builder().title("aa").rightAnswer("aa").image("aaaf").possibleAnswers(Arrays.asList()).build();
-//
-//            System.err.println(t);
-//            repository.save(t);
-//
-//            repository.findAll().forEach(System.out::println);
-//        };
-//    }
-
     @Bean
     ApplicationRunner init(ProjectServiceImpl projectService, ChapterServiceImpl chapterService, GameServiceImpl gameService, TaskServiceImpl taskService) {
         return args -> {
@@ -67,9 +40,9 @@ public class ScoolApplication {
 
             Long game_id = gameService.saveGame(g);
 
-            Task t = Task.builder().rightAnswer("cucu").title("aa").image("aa").game(gameService.getGameById(game_id)).build();
+            Task t = Task.builder().answer("cucu").title("aa").image("aa").game(gameService.getGameById(game_id)).build();
 
-            Task t1 = Task.builder().rightAnswer("bubusettete").title("aabb").game(gameService.getGameById(game_id)).image("aabb").build();
+            Task t1 = Task.builder().answer("bubusettete").title("aabb").game(gameService.getGameById(game_id)).image("aabb").build();
 
             Long taskID = taskService.saveTask(t);
             Long task1ID = taskService.saveTask(t1);
