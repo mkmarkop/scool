@@ -14,7 +14,7 @@ export class InMemoryDataService implements InMemoryDbService {
     const projects: Project[] = [
       {
         id: 1,
-        tag: 'Renaissance',
+        tag: 'history periods',
         title: 'Renaissance in Italy',
         description: 'abc',
         chapters: [{

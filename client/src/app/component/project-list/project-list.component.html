@@ -1,3 +1,9 @@
-<div *ngFor="let project of projects">
-  <a routerLink="/project/{{project.id}}">{{project.title}}</a>
+<span class="mat-title">Projects</span>
+<div class="projects-container">
+  <mat-list>
+    <mat-list-item *ngFor="let project of projects">
+      <button mat-button routerLink="/project/{{project.id}}">{{project.title}}</button>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
 </div>

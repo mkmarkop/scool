@@ -4,7 +4,15 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule} from '@angular/material';
+import {
+  MatBadgeModule,
+  MatButtonModule,
+  MatDividerModule,
+  MatIcon,
+  MatIconModule,
+  MatListModule,
+  MatToolbarModule
+} from '@angular/material';
 import {StudentService} from './service/student.service';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpClientInMemoryWebApiModule, HttpInMemoryWebApiModule} from 'angular-in-memory-web-api';
@@ -22,11 +30,16 @@ import { ProjectComponent } from './component/project/project.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false}
-    )
+    ),
+    MatButtonModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatListModule,
+    MatBadgeModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
