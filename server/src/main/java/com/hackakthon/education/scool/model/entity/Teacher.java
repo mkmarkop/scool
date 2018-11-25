@@ -2,10 +2,9 @@ package com.hackakthon.education.scool.model.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -14,7 +13,7 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString @EqualsAndHashCode
-public class Student {
+public class Teacher {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -25,4 +24,13 @@ public class Student {
 
     @NonNull
     private String lastName;
+
+    @NonNull
+    private String subject;
+
+    @OneToMany(
+            mappedBy = "teacher",
+            orphanRemoval = true
+    )
+    private List<Project> projects = new ArrayList<>();
 }
