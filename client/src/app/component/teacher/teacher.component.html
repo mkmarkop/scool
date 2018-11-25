@@ -1,0 +1,24 @@
+<span class="mat-title">Projects</span>
+<div class="projects-container">
+  <mat-form-field>
+    <mat-select placeholder="Choose Project">
+      <mat-option *ngFor="let project of projects" [value]="project.title" (click)="onSelect(project)">
+        {{project.title}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-card *ngIf="selectedProject">
+    <h2>{{selectedProject.title}}</h2>
+    <mat-list role="list">
+      <mat-list-item *ngFor="let chapter of selectedProject.chapters">{{chapter.title}}</mat-list-item>
+    </mat-list>
+    <mat-nav-list>
+      <mat-list-item *ngFor="let chapter of selectedProject.chapters">
+        <a matLine routerLink="/chapter_edition/{{chapter.id}}">Edit</a>
+        <button mat-icon-button (click)="delete(chapter)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-card>
+</div>

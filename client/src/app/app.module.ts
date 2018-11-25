@@ -11,20 +11,28 @@ import {
   MatIcon,
   MatIconModule,
   MatListModule,
-  MatToolbarModule
+  MatToolbarModule,
 } from '@angular/material';
+import {MatExpansionModule} from '@angular/material/expansion';
 import {StudentService} from './service/student.service';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpClientInMemoryWebApiModule, HttpInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {InMemoryDataService} from './service/in-memory-data.service';
 import { ProjectListComponent } from './component/project-list/project-list.component';
 import { ProjectComponent } from './component/project/project.component';
+import { TeacherComponent } from './component/teacher/teacher.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import {MatCardModule} from '@angular/material/card';
+import { ChapterEditionComponent } from './component/chapter-edition/chapter-edition.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProjectListComponent,
-    ProjectComponent
+    ProjectComponent,
+    TeacherComponent,
+    ChapterEditionComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +47,10 @@ import { ProjectComponent } from './component/project/project.component';
     MatIconModule,
     MatListModule,
     MatBadgeModule,
-    MatDividerModule
+    MatDividerModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
