@@ -4,6 +4,8 @@ import {GameService} from '../../../service/game.service';
 import {Location} from '@angular/common';
 import {Game} from '../../../domain/game';
 import {Task} from '../../../domain/task';
+import {MatSnackBar} from '@angular/material';
+import {config} from 'rxjs';
 
 @Component({
   selector: 'app-game',
@@ -18,12 +20,14 @@ export class GameComponent implements OnInit {
   private correct = 0;
   private finished = false;
   private percentage = 0;
+  private streak = 0;
 
   @ViewChild('taskQuestion') questionRef: ElementRef;
 
   constructor(
     private route: ActivatedRoute,
     private gameService: GameService,
+    private snackBar: MatSnackBar,
     private location: Location
   ) {
   }
@@ -52,9 +56,26 @@ export class GameComponent implements OnInit {
     this.task = this.game.tasks[this.taskIndex++ % this.game.tasks.length];
   }
 
+  displayInfo(message: string) {
+    this.snackBar.open(message, undefined, {
+      duration: 500
+    });
+  }
+
   onAnswerSubmit(answer: Event) {
     if (answer.toString() === this.task.answer) {
       this.correct++;
+      this.streak++;
+
+      if (this.streak === 3) {
+        this.displayInfo('Three in a row! Good start!');
+      } else if (this.streak === 4) {
+        this.displayInfo('Quattro Formaggio! Go on!');
+      } else if (this.streak === 5) {
+        this.displayInfo('Perfect score! Are you Da Vinci\'s relative?');
+      }
+    } else {
+      this.displayInfo('Unfortunately no :(');
     }
 
     this.nextTask();
@@ -66,6 +87,7 @@ export class GameComponent implements OnInit {
     this.correct = 0;
     this.finished = false;
     this.percentage = 0;
+    this.streak = 0;
     this.nextTask();
   }
 

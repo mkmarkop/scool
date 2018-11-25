@@ -10,7 +10,7 @@ import {
   MatDividerModule, MatExpansionModule,
   MatIcon,
   MatIconModule,
-  MatListModule, MatProgressBarModule,
+  MatListModule, MatProgressBarModule, MatSnackBarModule,
   MatToolbarModule,
 } from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
@@ -65,6 +65,7 @@ import { FormsModule} from '@angular/forms';
     MatSelectModule,
     MatCardModule,
     MatProgressBarModule,
+    MatSnackBarModule,
     FormsModule
   ],
   providers: [],
