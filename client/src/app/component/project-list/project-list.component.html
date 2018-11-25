@@ -1,9 +1,22 @@
-<span class="mat-title">Projects</span>
 <div class="projects-container">
-  <mat-list>
-    <mat-list-item *ngFor="let project of projects">
-      <button mat-button routerLink="/project/{{project.id}}">{{project.title}}</button>
-      <mat-divider></mat-divider>
-    </mat-list-item>
-  </mat-list>
+  <span class="mat-title">Projects</span>
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let project of projects">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{project.title}}
+        </mat-panel-title>
+        <mat-panel-description>
+          <mat-icon>local_offer</mat-icon>
+          <span>{{project.tag}}</span>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div class="project-description">{{project.description}}</div>
+
+      <mat-action-row>
+        <button routerLink="/project/{{project.id}}" mat-raised-button color="primary">Start</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
 </div>

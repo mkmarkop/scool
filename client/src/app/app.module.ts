@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MatBadgeModule,
-  MatButtonModule,
-  MatDividerModule,
+  MatButtonModule, MatChipsModule,
+  MatDividerModule, MatExpansionModule,
   MatIcon,
   MatIconModule,
   MatListModule,
@@ -15,16 +15,18 @@ import {
 } from '@angular/material';
 import {StudentService} from './service/student.service';
 import {HttpClientModule} from '@angular/common/http';
-import {HttpClientInMemoryWebApiModule, HttpInMemoryWebApiModule} from 'angular-in-memory-web-api';
+import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {InMemoryDataService} from './service/in-memory-data.service';
 import { ProjectListComponent } from './component/project-list/project-list.component';
 import { ProjectComponent } from './component/project/project.component';
+import { ChapterInfoComponent } from './component/project/chapter-info/chapter-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProjectListComponent,
-    ProjectComponent
+    ProjectComponent,
+    ChapterInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,9 @@ import { ProjectComponent } from './component/project/project.component';
     MatIconModule,
     MatListModule,
     MatBadgeModule,
-    MatDividerModule
+    MatDividerModule,
+    MatExpansionModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

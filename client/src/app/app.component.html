@@ -1,8 +1,10 @@
 <div class="application-contents mat-typography">
   <mat-toolbar color="primary" role="heading">
     <mat-toolbar-row>
-      <mat-icon>school</mat-icon>
-      <span>{{title | uppercase}}</span>
+      <span class="app-logo" routerLink="/">
+        <mat-icon>school</mat-icon>
+        <span>{{title | uppercase}}</span>
+      </span>
       <span class="spacer"></span>
       <span>Menu</span>
     </mat-toolbar-row>

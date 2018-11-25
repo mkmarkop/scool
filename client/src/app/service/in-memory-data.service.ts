@@ -16,7 +16,10 @@ export class InMemoryDataService implements InMemoryDbService {
         id: 1,
         tag: 'history periods',
         title: 'Renaissance in Italy',
-        description: 'abc',
+          description: 'Renaissance, or rebirth is a period of European history that began in and spread from Italy.' +
+            ' It is a period of cultural revival and a transition from the Dark Ages to a new era of science, exploration, ' +
+            'art, culture and religion. One aspect of this period are polymaths - people who are good at many areas of science' +
+            ' and art, not being specialized in just one.',
         chapters: [{
           id: 1,
           title: 'Works of Leonardo da Vinci',
