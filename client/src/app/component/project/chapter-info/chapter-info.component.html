@@ -1,6 +1,14 @@
 <div class="chapter-info">
-  <div class="chapter-header mat-headline">
-    <span class="chapter-number">{{number + 1}}</span>
-    <span class="chapter-title">{{chapter.title}}</span>
-  </div>
+  <app-chapter-header [title]="chapter.title" [number]="number + 1"></app-chapter-header>
+  <mat-action-list>
+    <mat-list-item *ngFor="let reading of chapter.readings">
+      <mat-icon mat-list-icon>import_contacts</mat-icon>
+      <h4 mat-line routerLink="/reading/{{reading.id}}">{{reading.title}}</h4>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>
+      <mat-icon mat-list-icon>border_color</mat-icon>
+      <h4 mat-line>Assignment</h4>
+    </mat-list-item>
+  </mat-action-list>
 </div>

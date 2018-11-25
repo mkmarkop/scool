@@ -20,13 +20,19 @@ import {InMemoryDataService} from './service/in-memory-data.service';
 import { ProjectListComponent } from './component/project-list/project-list.component';
 import { ProjectComponent } from './component/project/project.component';
 import { ChapterInfoComponent } from './component/project/chapter-info/chapter-info.component';
+import { ReadingComponent } from './component/project/reading/reading.component';
+import { GameComponent } from './component/project/game/game.component';
+import { ChapterHeaderComponent } from './component/project/chapter-header/chapter-header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProjectListComponent,
     ProjectComponent,
-    ChapterInfoComponent
+    ChapterInfoComponent,
+    ReadingComponent,
+    GameComponent,
+    ChapterHeaderComponent
   ],
   imports: [
     BrowserModule,

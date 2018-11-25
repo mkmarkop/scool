@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {InMemoryDbService} from 'angular-in-memory-web-api';
 import {Project} from '../domain/project';
+import {Reading} from '../domain/reading';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,22 @@ export class InMemoryDataService implements InMemoryDbService {
   }
 
   createDb() {
+    const readings: Reading[] = [{
+      id: 1,
+      title: 'Introduction',
+      text: 'Despite the recent awareness and admiration of Leonardo as a scientist and inventor,' +
+        'for the better part of four hundred years his fame rested on his achievements as a painter.' +
+        'A handful of works that are either authenticated or attributed to him have been regarded as' +
+        'among the great masterpieces. These paintings are famous for a variety of qualities that have' +
+        'been much imitated by students and discussed at great length by connoisseurs and critics. By the' +
+        '1490s Leonardo had already been described as a "Divine" painter.[81]\n' + '\n' + 'Among the qualities' +
+        ' that make Leonardo\'s work unique are his innovative techniques for laying on the paint; his detailed knowledge' +
+        ' of anatomy, light, botany and geology; his interest in physiognomy and the way humans register emotion in' +
+        ' expression and gesture; his innovative use of the human form in figurative composition; and his use of' +
+        ' subtle gradation of tone. All these qualities come together in his most famous painted works,' +
+        ' the Mona Lisa, the Last Supper, and the Virgin of the Rocks.'
+    }];
+
     const projects: Project[] = [
       {
         id: 1,
@@ -23,21 +40,7 @@ export class InMemoryDataService implements InMemoryDbService {
         chapters: [{
           id: 1,
           title: 'Works of Leonardo da Vinci',
-          readings: [{
-            id: 1,
-            title: 'Introduction',
-            text: 'Despite the recent awareness and admiration of Leonardo as a scientist and inventor,' +
-              'for the better part of four hundred years his fame rested on his achievements as a painter.' +
-              'A handful of works that are either authenticated or attributed to him have been regarded as' +
-              'among the great masterpieces. These paintings are famous for a variety of qualities that have' +
-              'been much imitated by students and discussed at great length by connoisseurs and critics. By the' +
-              '1490s Leonardo had already been described as a "Divine" painter.[81]\n' + '\n' + 'Among the qualities' +
-              ' that make Leonardo\'s work unique are his innovative techniques for laying on the paint; his detailed knowledge' +
-              ' of anatomy, light, botany and geology; his interest in physiognomy and the way humans register emotion in' +
-              ' expression and gesture; his innovative use of the human form in figurative composition; and his use of' +
-              ' subtle gradation of tone. All these qualities come together in his most famous painted works,' +
-              ' the Mona Lisa, the Last Supper, and the Virgin of the Rocks.'
-          }],
+          readings: readings,
           games: [{
             id: 1,
             tasks: [
@@ -83,6 +86,6 @@ export class InMemoryDataService implements InMemoryDbService {
       }
     ];
 
-    return { projects };
+    return { projects, readings };
   }
 }

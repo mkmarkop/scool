@@ -1,7 +1,6 @@
 <div *ngIf="project" class="project-container">
   <span class="mat-headline">{{project.title}}</span>
-
-  <app-chapter-info *ngFor="let chapter of project.chapters; let index = index"
-                    [chapter]="chapter" [number]="index">
+  <app-chapter-info
+    *ngFor="let chapter of project.chapters; let index = index" [chapter]="chapter" [number]="index">
   </app-chapter-info>
 </div>
